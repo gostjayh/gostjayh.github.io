@@ -17,6 +17,8 @@ const _copyText = (idVal) => {
 
    // Copy the text inside the text field
   navigator.clipboard.writeText(copyText.textContent);
+
+  alert("복사되었습니다.");
 }
 
 const main = async () => {
