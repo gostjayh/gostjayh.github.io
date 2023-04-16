@@ -286,39 +286,45 @@
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Board</h2>
                 </div>
-                <table class="table">
-                    <colgroup>
-                        <col width="10%" />
-                        <col />
-                        <col width="15%" />
-                        <!--col width="5%" /-->
-                    </colgroup>
-                    <tbody id="boardTable">
-                    </tbody>
-                </table>
-                <p class="d-grid gap-2 col-6 mx-auto">
-                    <a class="btn btn-dark" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                        축하메시지를 남겨주세요
-                    </a>
-                </p>
-                <div class="collapse" id="collapseExample">
-                    <form id="boardForm">
-                        <div class="mb-3">
-                          <label for="name" class="form-label">이름</label>
-                          <input type="text" class="form-control" id="name" required>
+                <div class="row">
+                    <div class="col-sm-12" style="overflow-y:auto; max-height:800px;">
+                        <table class="table">
+                            <colgroup>
+                                <col width="10%" />
+                                <col />
+                                <col width="15%" />
+                                <!--col width="5%" /-->
+                            </colgroup>
+                            <tbody id="boardTable">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-sm-12">
+                        <p class="d-grid gap-2 col-6 mx-auto">
+                            <a class="btn btn-dark" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                축하메시지를 남겨주세요
+                            </a>
+                        </p>
+                        <div class="collapse" id="collapseExample">
+                            <form id="boardForm">
+                                <div class="mb-3">
+                                  <label for="name" class="form-label">이름</label>
+                                  <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                  <label for="password" class="form-label">비밀번호</label>
+                                  <input type="password" class="form-control" id="password" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">내용</label>
+                                    <textarea id="message" class="form-control" rows="3" required></textarea>
+                                </div>
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                    <button type="submit" class="btn btn-primary">축하메시지 등록</button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="mb-3">
-                          <label for="password" class="form-label">비밀번호</label>
-                          <input type="password" class="form-control" id="password" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">내용</label>
-                            <textarea id="message" class="form-control" rows="3" required></textarea>
-                        </div>
-                        <div class="d-grid gap-2 col-6 mx-auto">
-                            <button type="submit" class="btn btn-primary">축하메시지 등록</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </section>

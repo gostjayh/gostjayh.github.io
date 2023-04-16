@@ -160,7 +160,7 @@ const map = (type) => {
   
   switch (type) {
     case "T": {
-      location.href = "https://apis.openapi.sk.com/tmap/app/routes?appKey=hjPsMFhz3L36UhJQidxpY6bv4bx08BPS9AK48bAD&name="+name+"&lon="+lng+"&lat="+lat;
+      location.href = "https://apis.openapi.sk.com/tmap/app/routes?appKey=qLDK0YvYMsmNtEB6yUud5POJLTjumml6Ay825Jt0&name="+name+"&lon="+lng+"&lat="+lat;
       break;
     }
     case "K": {
