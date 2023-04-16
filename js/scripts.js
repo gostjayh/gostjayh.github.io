@@ -152,5 +152,27 @@ const diffDay = () => {
   setTimeout(diffDay, 1000);
 }
 
+//맵 길안내
+const map = (type) => {
+  const name = "파티엘하우스 가산";
+  const lat = "37.47790530949328";
+  const lng = "126.88607034192312";
+  
+  switch (type) {
+    case "T": {
+      location.href = "https://apis.openapi.sk.com/tmap/app/routes?appKey=hjPsMFhz3L36UhJQidxpY6bv4bx08BPS9AK48bAD&name="+name+"&lon="+lng+"&lat="+lat;
+      break;
+    }
+    case "K": {
+      location.href = "https://map.kakao.com/link/to/"+name+","+lat+","+lng;
+      break;
+    }
+    case "N": {
+      location.href = "http://app.map.naver.com/launchApp/?version=11&menu=navigation&elat="+lat+"&elng="+lng+"&etitle="+name;
+      break;
+    }
+  }
+}
+
 diffDay();
 main();
