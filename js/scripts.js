@@ -111,8 +111,6 @@ const main = async () => {
   }
 }
 
-main();
-
 Kakao.init('b4df699df1647b2eb599c1ab9678b453');
 console.log(Kakao.isInitialized());
 
@@ -139,3 +137,20 @@ Kakao.Share.createDefaultButton({
     },
   ],
 });
+
+const diffDay = () => {
+  const masTime = new Date("2023-05-20");
+  const todayTime = new Date();
+  
+  const diff = masTime - todayTime;
+  
+  const diffDay = Math.floor(diff / (1000*60*60*24));
+  
+  let ddayLable = document.getElementById("dday");
+  ddayLable.textContent = diffDay;
+
+  setTimeout(diffDay, 1000);
+}
+
+diffDay();
+main();
