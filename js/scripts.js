@@ -34,14 +34,19 @@ const main = async () => {
 
   const addMessage = async (event) => {
     event.preventDefault();
+    const name = document.getElementById("name");
+    const password = document.getElementById("password");
+    const message = document.getElementById("message");
     const today = new Date();
     const result = await collection.insertOne({
-      name: document.getElementById("name").value,
-      password: document.getElementById("password").value,
-      message: document.getElementById("message").value,
+      name: name.value,
+      password: password.value,
+      message: message.value,
       regdate: today.toLocaleString(),
     });
-    console.log(result);
+    name.value = "";
+    password.value = "";
+    message.value = "";
   }
   
   const form = document.getElementById("boardForm");
@@ -51,9 +56,9 @@ const main = async () => {
     let nameCell = document.createElement("td");
     nameCell.textContent = val.name;
     let messageCell = document.createElement("td");
-    messageCell.textContent = val.message;
+    messageCell.innerHTML = val.message.replaceAll('\n', '<br>');
     let dateCell = document.createElement("td");
-    dateCell.textContent = val.regdate;
+    dateCell.textContent = val.regdate.slice(2).slice(0, val.regdate.length-5);
     //let deleteCell = document.createElement("td");
     //deleteCell.innerHTML = `<button type="button" class="btn btn-danger btn-sm delBtn"><i class="xi-close"></i></button>`;
     let row = document.createElement("tr");
