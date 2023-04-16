@@ -57,20 +57,25 @@ const main = async () => {
   const appendData = (val) => {
     let nameCell = document.createElement("td");
     nameCell.textContent = val.name;
-    let messageCell = document.createElement("td");
-    messageCell.innerHTML = val.message.replaceAll('\n', '<br>');
     let dateCell = document.createElement("td");
+    dateCell.classList.add("text-end");
     dateCell.textContent = val.regdate.slice(2).slice(0, val.regdate.length-5);
     //let deleteCell = document.createElement("td");
     //deleteCell.innerHTML = `<button type="button" class="btn btn-danger btn-sm delBtn"><i class="xi-close"></i></button>`;
     let row = document.createElement("tr");
-    row.id = val._id;
+    row.setAttribute("data-id", val._id);
     row.appendChild(nameCell);
-    row.appendChild(messageCell);
     row.appendChild(dateCell);
     //row.appendChild(deleteCell);
+    let messageCell = document.createElement("td");
+    messageCell.colSpan = 2;
+    messageCell.innerHTML = val.message.replaceAll('\n', '<br>');
+    let row1 = document.createElement("tr");
+    row1.setAttribute("data-id", val._id);
+    row1.appendChild(messageCell);
     let tableBody = document.getElementById("boardTable");
     tableBody.appendChild(row);
+    tableBody.appendChild(row1);
   }
 
   const removeData = (val) => {
