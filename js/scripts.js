@@ -56,6 +56,7 @@ const main = async () => {
 
   const appendData = (val) => {
     let nameCell = document.createElement("td");
+    nameCell.classList.add("fw-bold");
     nameCell.textContent = val.name;
     let dateCell = document.createElement("td");
     dateCell.classList.add("text-end");
