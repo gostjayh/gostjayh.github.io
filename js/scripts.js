@@ -62,20 +62,27 @@ const main = async () => {
     dateCell.textContent = val.regdate.slice(2).slice(0, val.regdate.length-5);
     //let deleteCell = document.createElement("td");
     //deleteCell.innerHTML = `<button type="button" class="btn btn-danger btn-sm delBtn"><i class="xi-close"></i></button>`;
-    let row = document.createElement("tr");
-    row.setAttribute("data-id", val._id);
-    row.appendChild(nameCell);
-    row.appendChild(dateCell);
+    let row1 = document.createElement("tr");
+    row1.appendChild(nameCell);
+    row1.appendChild(dateCell);
     //row.appendChild(deleteCell);
     let messageCell = document.createElement("td");
     messageCell.colSpan = 2;
     messageCell.innerHTML = val.message.replaceAll('\n', '<br>');
-    let row1 = document.createElement("tr");
-    row1.setAttribute("data-id", val._id);
-    row1.appendChild(messageCell);
+    let row2 = document.createElement("tr");
+    row2.appendChild(messageCell);
+    let table = document.createElement("table");
+    table.classList.add("table");
+    table.classList.add("table-borderless");
+    table.appendChild(row1);
+    table.appendChild(row2);
+    let cell = document.createElement("td");
+    cell.appendChild(table);
+    let row = document.createElement("tr");
+    row.id = val._id;
+    row.appendChild(cell);
     let tableBody = document.getElementById("boardTable");
     tableBody.appendChild(row);
-    tableBody.appendChild(row1);
   }
 
   const removeData = (val) => {
@@ -83,8 +90,8 @@ const main = async () => {
     tableBody.remove();
   }
 
-  const count = await collection.count();
-  console.log(count);
+  //const count = await collection.count();
+  //console.log(count);
 
   const datas = await collection.find();
   for (const data of datas) {
@@ -154,7 +161,7 @@ const diffDay = () => {
   let ddayLable = document.getElementById("dday");
   ddayLable.textContent = diffDay;
 
-  setTimeout(diffDay, 1000);
+  setTimeout(diffDay, 60000);
 }
 
 //맵 길안내
