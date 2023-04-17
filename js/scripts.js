@@ -126,18 +126,18 @@ Kakao.Share.createDefaultButton({
     title: '최재인의 첫번째 생일파티에 초대합니다',
     description: '아빠: 최경훈 ♡ 엄마: 김형경 | 날짜: 2023.05.20 | 시간: AM 11:30 | 장소: 파티엘하우스 가산점 마르홀',
     imageUrl:
-      'https://gostjayh.github.io/assets/img/share.jpg',
+      'http://jaein-1st-birth.kro.kr/assets/img/share.jpg',
     link: {
-      mobileWebUrl: 'https://gostjayh.github.io',
-      webUrl: 'https://gostjayh.github.io',
+      mobileWebUrl: 'http://jaein-1st-birth.kro.kr',
+      webUrl: 'http://jaein-1st-birth.kro.kr',
     },
   },
   buttons: [
     {
       title: '자세히 보기',
       link: {
-        mobileWebUrl: 'https://gostjayh.github.io',
-        webUrl: 'https://gostjayh.github.io',
+        mobileWebUrl: 'http://jaein-1st-birth.kro.kr',
+        webUrl: 'http://jaein-1st-birth.kro.kr',
       },
     },
   ],
